@@ -1,0 +1,52 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fafafa; /* Light background */
+    color: #383a42; /* Dark text for contrast */
+}
+
+#chat-container {
+    width: 300px;
+    margin: auto;
+    border: 1px solid #e1e4e8; /* Light grey border */
+    background-color: #ffffff; /* White background for the container */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 10px;
+}
+
+#chat-box {
+    height: 200px;
+    border: 1px solid #e1e4e8; /* Light grey border */
+    margin-bottom: 10px;
+    padding: 5px;
+    overflow-y: auto;
+    background-color: #ffffff; /* White background for the chat box */
+}
+
+#user-input {
+    width: 70%;
+    padding: 5px;
+    border: 1px solid #e1e4e8; /* Light grey border */
+    background-color: #f6f8fa; /* Very light grey for input field */
+}
+
+#send-button {
+    width: 25%;
+    padding: 5px;
+    border: 1px solid #e1e4e8; /* Light grey border */
+    background-color: #0366d6; /* Blue for the send button */
+    color: white; /* White text for the button */
+    cursor: pointer;
+}
+
+.user-message {
+    text-align: right;
+    margin-bottom: 5px;
+    color: #032f62; /* Darker text for user messages */
+}
+
+.bot-message {
+    text-align: left;
+    margin-bottom: 5px;
+    color: #22863a; /* Greenish text for bot messages */
+}
+
