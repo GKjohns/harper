@@ -50,3 +50,23 @@ body {
     color: #22863a; /* Greenish text for bot messages */
 }
 
+#app-container {
+    display: flex;
+    width: 600px;
+    margin: auto;
+}
+
+#sidebar {
+    width: 150px;
+    border-right: 1px solid #e1e4e8;
+    padding: 10px;
+}
+
+#new-chat-button {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#chat-list {
+    overflow-y: auto;
+}
