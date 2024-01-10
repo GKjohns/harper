@@ -13,11 +13,11 @@ function createNewChat() {
 
 function sendMessage() {
     const userInput = document.getElementById('user-input').value;
-    if (userInput) {
-        addMessageToChat(currentChatId, { sender: 'user', text: userInput });
-        simulateApiResponse(userInput);
-        document.getElementById('user-input').value = '';
-    }
+    if (!userInput) return;
+
+    addMessageToChat(currentChatId, { sender: 'user', text: userInput });
+    simulateApiResponse(userInput); // Simulate bot response
+    document.getElementById('user-input').value = '';
 }
 
 function addMessageToChat(chatId, message) {
@@ -59,10 +59,13 @@ function selectChat(chatId) {
 }
 
 function simulateApiResponse(userInput) {
-    setTimeout(() => {
-        const botResponse = 'Simulated response for: ' + userInput;
-        addMessageToChat(currentChatId, { sender: 'bot', text: botResponse });
-    }, 1000);
+    // Only simulate response for non-empty input
+    if (userInput.trim() !== '') {
+        setTimeout(() => {
+            const botResponse = 'Simulated response for: ' + userInput;
+            addMessageToChat(currentChatId, { sender: 'bot', text: botResponse });
+        }, 1000);
+    }
 }
 
 createNewChat(); // Initialize the first chat
