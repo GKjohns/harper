@@ -46,15 +46,19 @@ class GeminiProModel(LargeLanguageModel):
 
 # Factory class
 class LLMFactory:
+
+    model_name_to_model = {
+        'GPT_3_5_TURBO': GPT35TurboModel,
+        'GPT_4': GPT4Model,
+        'GEMINI_PRO': GeminiProModel,
+    }
+
     def get_llm_model(self, model_name):
-        if model_name == GPT_3_5_TURBO:
-            return GPT35TurboModel()
-        elif model_name == GPT_4:
-            return GPT4Model()
-        elif model_name == GEMINI_PRO:
-            return GeminiProModel()
-        else:
+
+        if model_name not in self.model_name_to_model:
             raise ValueError(f'Must provide a valid model. {model_name} not in {VALID_MODELS}')
+        model = self.model_name_to_model[model_name]
+        return model()
 
 # Function to use the factory
 def llm_call(prompt, model_name=GPT_3_5_TURBO, temperature=0.0):
